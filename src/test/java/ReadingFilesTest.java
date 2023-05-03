@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import Json.Meetings;
+import json.Meetings;
 
 public class ReadingFilesTest {
     private ClassLoader cl = ReadingFilesTest.class.getClassLoader();
@@ -66,7 +66,7 @@ public class ReadingFilesTest {
     @Test
     void parseJson() throws Exception {
         ObjectMapper objectMapper = new ObjectMapper();
-        try (InputStream is = cl.getResourceAsStream("Meetings.json");
+        try (InputStream is = cl.getResourceAsStream("meetings.json");
              InputStreamReader isr = new InputStreamReader(is)) {
             Meetings meetings = objectMapper.readValue(isr, Meetings.class);
 
